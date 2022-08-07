@@ -1,29 +1,30 @@
 # Neural-Sim: Learning to Generate Training Data with NeRF
 
-[ECCV 2022] Neural-Sim: Learning to Generate Training Data with NeRF
+[ECCV 2022] [Neural-Sim: Learning to Generate Training Data with NeRF](https://arxiv.org/pdf/2207.11368.pdf)
 
-The code is actively updating, thanks!
 
 ## Overview
-The code is trying to use generative models to boost the performance of discriminative models.
-Specifically, we use data to train a nerf and we want to obtain the **optimal parameter** that can
-use nerf to synthesize more demanded data, which can be used to train a down stream detection model. 
-We use bi-level optimization to optimize the Nerf parameter with the loss on validation set.
+The code is for On-demand synthetic data generation: Given a target task and a
+test dataset, our approach “Neural-sim” generates data on-demand using a fully
+differentiable synthetic data generation pipeline which maximises accuracy for
+the target task.
+<div align="center">
+    <img src="./docs/neural-sim.png" alt="Editor" width="500">
+</div>
 
-It contains 4 mian parts:
 
-1 BlenderProc to synthesize controllable object images (e.g., YCB, LMO)
+Neural-Sim pipeline: Our pipeline finds the optimal parameters for generating views from a trained neural renderer (NeRF) to use as training data for
+object detection. The objective is to find the optimal NeRF rendering parameters ψ that can generate synthetic training data Dtrain, such that the model
+(RetinaNet, in our experiments) trained on Dtrain, maximizes accuracy on a
+downstream task represented by the validation set Dval
 
-2 Nerf training
-
-3 Detectron2 training and testing
-
-4 End-to-end Bilevel Optimization
-
+<div align="center">
+    <img src="./docs/pipeline.png" alt="Editor" width="500">
+</div>
 
 ### 0 install
 
-git pull Neural-Sim
+git clone Neural-Sim-NeRF
 
 1 install the requirement of nerf-pytorch
 git clone https://github.com/yenchenlin/nerf-pytorch.git
