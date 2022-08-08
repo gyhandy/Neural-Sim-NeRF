@@ -2,6 +2,7 @@
 
 [ECCV 2022] [Neural-Sim: Learning to Generate Training Data with NeRF](https://arxiv.org/pdf/2207.11368.pdf)
 
+Code are actively updating, thanks!
 
 ## Overview
 The code is for On-demand synthetic data generation: Given a target task and a
