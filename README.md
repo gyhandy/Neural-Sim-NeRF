@@ -25,11 +25,8 @@ downstream task represented by the validation set Dval
 
 ## 1 Installation
 
-### Getting started
-
 Start by cloning the repo:
 
-<<<<<<< HEAD
 ```bash
 git clone https://github.com/gyhandy/Neural-Sim-NeRF.git
 ```
@@ -41,28 +38,26 @@ pip install -r requirements.txt
 ```
 
 2 install [detectorn2](https://detectron2.readthedocs.io/en/latest/tutorials/install.html)
-=======
 
-### 1 Nerf training 
+## 2 NeRF models and dataset
 
-Train nerf with instructions (https://github.com/yenchenlin/nerf-pytorch)
+You could train nerf with instructions [NeRF-pytorch](https://github.com/yenchenlin/nerf-pytorch)
 
-
-
-### 2 Detectron2 and train the models
-
-Create a coco format dataset and then train detectron2 with the prepared dataset.
->>>>>>> 0ac20eabd9625976ad74ba495abdbaa8ef1e5620
+For quick start, you could download our pretrained NeRF models and created sample dataset with BlenderProc
+[here](http://ilab.usc.edu/andy/dataset/ycb_syn_data_and_nerfmodel.zip). Then unzip it and place in `.logs`. 
+(Note: if not download automatically, please right click, copy the link and open in a new tab.)
 
 
-### 3 Bilelve optimization pipeline
+### 3 Neural_Sim Bilelve optimization pipeline
 
 ```bash
 cd ./optimization
 ```
 
-Please use the Nerf_AutoSimulate_differentiable_general_all.py to run the end-to-end pipeline.
+Please use the neural-sim_main.py to run the end-to-end pipeline. E.g.,
 
 ```bash
-python neural_sim_main.py --config ../configs/cheese_noscale_auto_general.txt --object_id 15 --expname ycbv6c-15-bin3 --psi_pose_cats_mode 3
+python neural_sim_main.py --object_id 2 --expname exp_ycb_synthetic --psi_pose_cats_mode 1
 ```
+
+We will add more details about the parameters soon, thanks!
