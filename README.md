@@ -2,6 +2,7 @@
 
 [ECCV 2022] [Neural-Sim: Learning to Generate Training Data with NeRF](https://arxiv.org/pdf/2207.11368.pdf)
 
+Code are actively updating, thanks!
 
 ## Overview
 The code is for On-demand synthetic data generation: Given a target task and a
@@ -28,6 +29,7 @@ downstream task represented by the validation set Dval
 
 Start by cloning the repo:
 
+<<<<<<< HEAD
 ```bash
 git clone https://github.com/gyhandy/Neural-Sim-NeRF.git
 ```
@@ -39,9 +41,21 @@ pip install -r requirements.txt
 ```
 
 2 install [detectorn2](https://detectron2.readthedocs.io/en/latest/tutorials/install.html)
+=======
+
+### 1 Nerf training 
+
+Train nerf with instructions (https://github.com/yenchenlin/nerf-pytorch)
 
 
-### 4 Bilelve optimization pipeline
+
+### 2 Detectron2 and train the models
+
+Create a coco format dataset and then train detectron2 with the prepared dataset.
+>>>>>>> 0ac20eabd9625976ad74ba495abdbaa8ef1e5620
+
+
+### 3 Bilelve optimization pipeline
 
 ```bash
 cd ./optimization
