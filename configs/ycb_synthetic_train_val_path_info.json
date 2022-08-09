@@ -1,0 +1,101 @@
+{
+    "dataset_name": "ycbv",
+    "train_info": {
+        "1": "D_train/1",
+        "2": "D_train/2",
+        "8": "D_train/8",
+        "11": "D_train/11",
+        "14": "D_train/14",
+        "15": "D_train/15"
+    },
+    "test_info": {
+            "one_1": {
+                "1": "D_val_mm/one_1/1",
+                "2": "D_val_mm/one_1/2",
+                "8": "D_val_mm/one_1/8",
+                "11": "D_val_mm/one_1/11",
+                "14": "D_val_mm/one_1/14",
+                "15": "D_val_mm/one_1/15"
+            },
+            "one_2": {
+                "1": "D_val_mm/one_2/1",
+                "2": "D_val_mm/one_2/2",
+                "8": "D_val_mm/one_2/8",
+                "11": "D_val_mm/one_2/11",
+                "14": "D_val_mm/one_2/14",
+                "15": "D_val_mm/one_2/15"
+            },
+            "one_3": {
+                "1": "D_val_mm/one_3/1",
+                "2": "D_val_mm/one_3/2",
+                "8": "D_val_mm/one_3/8",
+                "11": "D_val_mm/one_3/11",
+                "14": "D_val_mm/one_3/14",
+                "15": "D_val_mm/one_3/15"
+            },
+            "one_4": {
+                "1": "D_val_mm/one_4/1",
+                "2": "D_val_mm/one_4/2",
+                "8": "D_val_mm/one_4/8",
+                "11": "D_val_mm/one_4/11",
+                "14": "D_val_mm/one_4/14",
+                "15": "D_val_mm/one_4/15"
+            },
+            "one_5": {
+                "1": "D_val_mm/one_5/1",
+                "2": "D_val_mm/one_5/2",
+                "8": "D_val_mm/one_5/8",
+                "11": "D_val_mm/one_5/11",
+                "14": "D_val_mm/one_5/14",
+                "15": "D_val_mm/one_5/15"
+            },
+            "one_6": {
+                "1": "D_val_mm/one_6/1",
+                "2": "D_val_mm/one_6/2",
+                "8": "D_val_mm/one_6/8",
+                "11": "D_val_mm/one_6/11",
+                "14": "D_val_mm/one_6/14",
+                "15": "D_val_mm/one_6/15"
+            },
+            "one_7": {
+                "1": "D_val_mm/one_7/1",
+                "2": "D_val_mm/one_7/2",
+                "8": "D_val_mm/one_7/8",
+                "11": "D_val_mm/one_7/11",
+                "14": "D_val_mm/one_7/14",
+                "15": "D_val_mm/one_7/15"
+            },
+            "one_8": {
+                "1": "D_val_mm/one_8/1",
+                "2": "D_val_mm/one_8/2",
+                "8": "D_val_mm/one_8/8",
+                "11": "D_val_mm/one_8/11",
+                "14": "D_val_mm/one_8/14",
+                "15": "D_val_mm/one_8/15"
+            },
+            "two_12": {
+                "1": "D_val_mm/two_12/1",
+                "2": "D_val_mm/two_12/2",
+                "8": "D_val_mm/two_12/8",
+                "11": "D_val_mm/two_12/11",
+                "14": "D_val_mm/two_12/14",
+                "15": "D_val_mm/two_12/15"
+            },
+            "two_15": {
+                "1": "D_val_mm/two_15/1",
+                "2": "D_val_mm/two_15/2",
+                "8": "D_val_mm/two_15/8",
+                "11": "D_val_mm/two_15/11",
+                "14": "D_val_mm/two_15/14",
+                "15": "D_val_mm/two_15/15"
+            },
+            "three_135": {
+                "1": "D_val_mm/three_135/1",
+                "2": "D_val_mm/three_135/2",
+                "8": "D_val_mm/three_135/8",
+                "11": "D_val_mm/three_135/11",
+                "14": "D_val_mm/three_135/14",
+                "15": "D_val_mm/three_135/15"
+            }
+    }
+}

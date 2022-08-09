@@ -1,0 +1,7 @@
+__pycache__
+*/__pycache__
+.idea/
+logs/D_train
+logs/D_val_mm
+logs/exp_*
+logs/nerf_models

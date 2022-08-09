@@ -1,0 +1,28 @@
+# expname = ycbvid15 # deinfe in mainfolder
+basedir = ../logs
+datadir = ../logs/nerfdata/
+dataset_type = LINEMOD
+
+no_batching = True
+
+use_viewdirs = True
+
+lrate_decay = 500
+
+N_samples = 64 # default 64
+N_importance = 128
+
+precrop_iters = 1000
+precrop_frac = 0.25
+
+white_bkgd = False
+
+N_rand = 1024
+i_testset = 1000
+i_video = 10000
+i_weights = 2000
+testskip = 0
+chunk = 512 # default 1024 batch size of gradient computing
+half_res = True
+render_only = True
+# render_test = True
