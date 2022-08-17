@@ -41,14 +41,61 @@ pip install -r requirements.txt
 
 ## 2 NeRF models and dataset
 
-You could train nerf with instructions [NeRF-pytorch](https://github.com/yenchenlin/nerf-pytorch)
+
+### Quick start
+
 
 For quick start, you could download our pretrained NeRF models and created sample dataset with BlenderProc
 [here](http://ilab.usc.edu/andy/dataset/ycb_syn_data_and_nerfmodel.zip). Then unzip it and place in `.logs`. 
 (Note: if not download automatically, please right click, copy the link and open in a new tab.)
 
 
-### 3 Neural_Sim Bilelve optimization pipeline
+### Train your own NeRF model with BlenderProc
+
+
+#### (1) Generate Bop format images with BlenderProc 
+
+- Follow the Installation instruction of [BlenderProc](https://github.com/DLR-RM/BlenderProc)
+
+- Download [BOP dataset](https://bop.felk.cvut.cz/datasets/) object toolkit used in BlenderProc. 
+For instance, to download the YCB-V dataset toolkit, please download the "Base archive" and "Object models", two zip files.
+Then unzip ycbv_base.zip get the ycbv folder, unzip ycbv_models.zip get the models folder, move the models folder into ycbv folder.
+The path may look like this:
+```bash
+-BOP
+--bop_toolkit
+--ycbv_models
+--ycbv
+---models
+```
+
+- Follow the examples (https://github.com/DLR-RM/BlenderProc/blob/main/README.md#examples) to understand the basic configuration file.
+or use our example configure files in ./data/BlenderProc/camera_sampling.
+
+Note: It would be better to create a new virtual environment for Blenderproc synthesis.
+
+example command
+```bash
+python run.py examples/camera_sampling/config.yaml /PATH/OF/BOP/ ycbv /PATH/OF/BOP/bop_toolkit/ OUTPUT/PATH
+```
+
+
+#### (2) Process synthesized images to be admitted by nerf (OPENCV --> OPENGL)
+
+if use BlenderProc synthesized image, please use
+```bash
+python data_generation-Blender.py
+```
+
+if use LatentFusion read BOP format data, please use
+```bash
+python data_generation-LINEMOD.py
+```
+
+
+#### (3) You could train NeRF with instructions [NeRF-pytorch](https://github.com/yenchenlin/nerf-pytorch)
+
+## 3 Neural_Sim Bilelve optimization pipeline
 
 ```bash
 cd ./optimization
@@ -72,7 +119,7 @@ python neural_sim_main.py --config ../configs/nerf_param_ycbv_general.txt --obje
 
 
 ## Contact / Cite
-You may cite us in your research as:
+If you use (part of) our code or find our work helpful, please consider citing
 ```
 @article{ge2022neural,
   title={Neural-Sim: Learning to Generate Training Data with NeRF},
