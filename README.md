@@ -57,7 +57,27 @@ cd ./optimization
 Please use the neural-sim_main.py to run the end-to-end pipeline. E.g.,
 
 ```bash
-python neural_sim_main.py --object_id 2 --expname exp_ycb_synthetic --psi_pose_cats_mode 1
+python neural_sim_main.py --config ../configs/nerf_param_ycbv_general.txt --object_id 2 --expname exp_ycb_synthetic --psi_pose_cats_mode 5 --test_distribution 'one_1'
 ```
+'--config' indicates the NeRF parameter
 
-We will add more details about the parameters soon, thanks!
+'--object_id' indicates the optimized ycbv object id, here is cheese box
+
+'--expname' indicates the name of experiment
+
+'--psi_pose_cats_mode' indicates the bin number of starting pose distribution during training
+
+'--test_distribution' indicates the bin number of test pose distribution
+
+
+
+## Contact / Cite
+You may cite us in your research as:
+```
+@article{ge2022neural,
+  title={Neural-Sim: Learning to Generate Training Data with NeRF},
+  author={Ge, Yunhao and Behl, Harkirat and Xu, Jiashu and Gunasekar, Suriya and Joshi, Neel and Song, Yale and Wang, Xin and Itti, Laurent and Vineet, Vibhav},
+  journal={arXiv preprint arXiv:2207.11368},
+  year={2022}
+}
+```
