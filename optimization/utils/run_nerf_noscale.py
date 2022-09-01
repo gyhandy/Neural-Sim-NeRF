@@ -4,7 +4,7 @@ import time
 from tqdm import tqdm, trange
 
 from utils.run_nerf_helpers import *
-from optimization.utils.load_LINEMOD_noscale import load_LINEMOD_data
+from utils.load_LINEMOD_noscale import load_LINEMOD_data
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 np.random.seed(0)

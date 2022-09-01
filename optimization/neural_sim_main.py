@@ -6,6 +6,23 @@ For number of iterations do:
     step 2 Fine-tune Faster RCNN model with D_train
     step 3 Compute d L_val / d \psi and update \psi
 '''
+import os, sys
+import numpy as np
+import imageio
+import json
+import random
+import time
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from tqdm import tqdm, trange
+
+import matplotlib.pyplot as plt
+
+import cv2
+import matplotlib
+import imageio
+from PIL import Image
 
 # import some common detectron2 utilities
 from detectron2 import model_zoo
@@ -20,7 +37,7 @@ from utils.load_LINEMOD_noscale import *
 from detectron2.evaluation import COCOEvaluator, inference_on_dataset
 from detectron2.utils.events import TensorboardXWriter, EventStorage
 from utils import dataset_mapper
-
+from optimization.utils.defaults import *
 class NeRF:
     def __init__(self, args): # create nerf
         self.param = args
@@ -1324,21 +1341,21 @@ def config_parser():
                         help='optimization flag')
     parser.add_argument("--n_samples_K",   type=int, default=50,
                         help='in each iteration number of sample images')
-    parser.add_argument("--n_epochs",   type=int, default=5,
+    parser.add_argument("--n_epochs",   type=int, default=50,
                         help='number of epochs to optimize')
     parser.add_argument("--object_id", type=str, default='2',
                         help='1~21')
-    parser.add_argument('--psi_pose_cats_mode', type=str,  default='1', help='1~8, uniform, two_13, two_27, three_123, three_147')
+    parser.add_argument('--psi_pose_cats_mode', type=str,  default='5', help='1~8, uniform, two_13, two_27, three_123, three_147')
     parser.add_argument('--train_val_path_info', type=str, default='../configs/ycb_synthetic_train_val_path_info.json',
                         help='json that save the images')
 
-    parser.add_argument("--opt_lr", type=float, default=1e-3,
+    parser.add_argument("--opt_lr", type=float, default=5e-5,
                         help='learning rate of the optimization')
     parser.add_argument("--gumble_T", type=float, default=0.1,
                         help='gumble softmax temperature [0~1]')
 
     parser.add_argument('--test_distribution', type=str,  default='one_1', help='one_1~one_8, two_12, two_15, three_135')
-    parser.add_argument('--opt_method', type=str,  default='sgd', help='sgd, momentum, Adam')
+    parser.add_argument('--opt_method', type=str,  default='momentum', help='sgd, momentum, Adam')
 
     return parser
 
