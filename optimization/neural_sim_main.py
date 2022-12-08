@@ -37,7 +37,7 @@ from utils.load_LINEMOD_noscale import *
 from detectron2.evaluation import COCOEvaluator, inference_on_dataset
 from detectron2.utils.events import TensorboardXWriter, EventStorage
 from utils import dataset_mapper
-from optimization.utils.defaults import *
+from utils.defaults import *
 class NeRF:
     def __init__(self, args): # create nerf
         self.param = args
