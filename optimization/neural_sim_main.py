@@ -837,8 +837,8 @@ class Detector:
         # self.trainer = DefaultTrainer(self.cfg)
         self.trainer = Trainer(self.cfg)
         # self.trainer.register_hooks([HelloHook()])
-        if iteration > 0: # start from second iteration
-            self.cfg.MODEL.WEIGHTS = os.path.join(self.cfg.OUTPUT_DIR, 'model_final.pth')
+        #if iteration > 0: # start from second iteration
+        #    self.cfg.MODEL.WEIGHTS = os.path.join(self.cfg.OUTPUT_DIR, 'model_final.pth')
         self.trainer.resume_or_load(resume=False)
         print('Detectron model:', self.cfg.MODEL.WEIGHTS)
         # comment when do not want to discuss train
