@@ -47,7 +47,7 @@ from detectron2.engine import hooks
 from detectron2.engine import AMPTrainer, SimpleTrainer, TrainerBase
 # from train_loop import hooks
 # from train_loop import AMPTrainer, SimpleTrainer, TrainerBase
-from optimization.utils.dataset_mapper import *
+from utils.dataset_mapper import *
 __all__ = [
     "default_argument_parser",
     "default_setup",
